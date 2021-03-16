@@ -8,14 +8,14 @@ router.get('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
 
-  tags.findAll({
+  Tag.findAll({
     include: [
       {
         model: Product,
         through: ProductTag,
       },
     ],
-  }).then((tags) => res.json(tags)).catch((err) => res.status(500).json(err));
+  }).then((tag) => res.json(tag)).catch((err) => res.status(500).json(err));
 
 });
 
@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
 
-  tag.findOne({
+  Tag.findOne({
     where: {
       id: req.params.id,
     },
@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new tag
 
-  tag.create(req.body).then((tag) => { 
+  Tag.create(req.body).then((tag) => { 
     res.status(200).json(tag)
     .catch((err) => {res.status(404).json(err)});
   });

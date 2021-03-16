@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   
   // find all products
   // be sure to include its associated Category and Tag data
-  product.findAll({
+  Product.findAll({
     include: [Category, 
       {
         model: tag,
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
   
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
-  product.findOne({
+  Product.findOne({
     where: {
     id: req.params.id,
   },
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 // create new product
 router.post('/', (req, res) => {
   /* req.body should look like this...*/
-  product.create(
+  Product.create(
     {
       product_name: "Basketball",
       price: 200.00,
@@ -126,7 +126,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
-  product.destroy({ where:
+  Product.destroy({ where:
     {
       id: req.params.id,
     }
