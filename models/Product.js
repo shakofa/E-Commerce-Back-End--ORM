@@ -25,7 +25,7 @@ Product.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {
-        isDecimal: true,
+        isDecimal: true,  // checks for any numbers
       },
     },
     stock: {
@@ -33,9 +33,10 @@ Product.init(
       allowNull: false,
       defaultValue: 10,
       validate: {
-        isNumeric: true,
+        isNumeric: true,  // will only allow numbers
       },
     },
+    // This column will store a reference of the `id` of the `Category` for this `Product`
     category_id: {
       type: DataTypes.INTEGER,
       references: {

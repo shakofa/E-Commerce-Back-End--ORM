@@ -2,7 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
+
+// Initialize ProductTag model (table) by extending off Sequelize's Model class. This model is being created to be our through connection between Product and Tag.
 class ProductTag extends Model {}
+
 
 ProductTag.init(
   {

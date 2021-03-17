@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
   Product.findAll({
     include: [Category, 
       {
-        model: tag,
-        through: productTag,
+        model: Tag,
+        through: ProductTag,
       },
     ],
   })
@@ -33,11 +33,10 @@ router.get('/:id', (req, res) => {
   include: [
     Category,
     {
-      model: tag,
-      through: productTag,
+      model: Tag,
+      through: ProductTag,
     },
   ],
-
 })
   .then((category) => res.json(category))
   .catch((err) => res.status(400).json(err));
