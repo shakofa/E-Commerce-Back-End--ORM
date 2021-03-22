@@ -31,7 +31,7 @@ dotenv will protect your credentials, check .env.EXAMPLE to see what you need on
 ## Usage
 Before running to start, create your database on MySQL first. Then, use the file .env.EXAMPLE to create your .env with your database name, user name, and password. Next, run on your command line npm run seed to seed data to your database so that you can test your routes.
 
-There are four mpdels in this repo that create the foloowing tables:
+There are four mpdels in this repo that create the following tables:
 * Category
 * Product
 * Tag
@@ -49,7 +49,7 @@ Finally, to be able to test your back end routes with Postman, Insomnia Core or 
 Use postman, Insomnia Core or similar application to test the GET, POST, PUT and DELETE routes for this back end application.
 
 ## Demo
-Take a look at the functionality of this priject. [Click Here]()
+Take a look at the functionality of this project. [Click Here]()
 
 ## Tools and Technologies:
 **Languages:** JAVASCRIPT
